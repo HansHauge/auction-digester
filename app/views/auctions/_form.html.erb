@@ -1,0 +1,5 @@
+
+<%= form_tag '/auctions', multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload" %>
+<% end %>

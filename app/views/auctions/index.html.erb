@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Auctions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class='strong'>
+      <td>Auction Name</td>
+      <td>Auction City</td>
+      <td>Number of Sales</td>
+      <td>Total Profit</td>
+      <td>Average Profit</td>
+    </tr>
+    <% @auctions.each do |auction| %>
+      <tr>
+        <td><%= auction.name %></td>
+        <td><%= auction.city %></td>
+        <td><%= auction.sales.count %></td>
+        <td><%= number_to_currency(auction.total_profit) %></td>
+        <td><%= number_to_currency(auction.average_profit) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Auction', new_auction_path %>
